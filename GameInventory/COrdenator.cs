@@ -4,6 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*
+ * Autor: Miguel Angel Arellano Juárez
+ * Fecha: 12/02/2024
+ * Versión: 1.0.0.0
+ * Modificación: 12/02/2024
+ */
+
+// Clase que representa un artículo en el inventario del juego medieval.
+// Implementa la interfaz IInventario para mostrar información y la interfaz IComparable para permitir la comparación y ordenación por nivel.
+
 namespace GameInventory
 {
     internal class COrdenator : IInventario, IComparable<COrdenator>

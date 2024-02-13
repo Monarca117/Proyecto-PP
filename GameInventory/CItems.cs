@@ -5,6 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*
+ * Autor: Miguel Angel Arellano Juárez
+ * Fecha: 12/02/2024
+ * Versión: 1.0.0.0
+ * Modificación: 12/02/2024
+ */
+
+// Clase que representa el inventario del juego, que contiene una lista de artículos (COrdenator).
+// Implementa IEnumerable para permitir la iteración sobre los artículos y tiene un método Sort para ordenar el inventario.
+
 namespace GameInventory
 {
     internal class CItems : IEnumerable<COrdenator>

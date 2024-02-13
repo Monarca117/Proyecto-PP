@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,48 +12,62 @@ using System.Threading.Tasks;
  * Modificación: 12/02/2024
  */
 
+// Clase principal que contiene el punto de entrada (Main) del programa.
+// Presenta opciones al usuario para mostrar, ordenar e incluso comprar artículos del inventario.
+
 namespace GameInventory
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("I N V E N T A R I O");
+            String respuesta = "";
 
-            // Crear una instancia de la clase CItems que contiene el inventario
-            CItems inventario = new CItems();
+            //Bienvenida
+            Console.WriteLine("Bienvenido, ¿desea abrir su inventario? (Si/No)");
+            respuesta = Console.ReadLine();
 
-            // Mostrar el inventario antes de ordenar
-            foreach (COrdenator item in inventario)
+            if(respuesta.ToLower() == "si" || respuesta.ToLower() == "si")
             {
-                Console.WriteLine(item);
-            }
+                Console.WriteLine("I N V E N T A R I O");
 
-            Console.WriteLine("-------------------------");
+                // Crear una instancia de la clase CItems que contiene el inventario
+                CItems inventario = new CItems();
 
-            // Preguntar al usuario si quiere ordenar el inventario por nivel
-            Console.Write("¿Desea ordenar el inventario por nivel? (Sí/No): ");
-            string respuesta = Console.ReadLine();
-
-            if (respuesta.ToLower() == "sí" || respuesta.ToLower() == "si")
-            {
-                // Ordenar el inventario por nivel
-                inventario.Sort();
-
-                // Mostrar el inventario ordenado
+                // Mostrar el inventario antes de ordenar
                 foreach (COrdenator item in inventario)
                 {
                     Console.WriteLine(item);
                 }
-            }
 
-            // Preguntar al usuario si desea comprar un artículo
-            Console.Write("¿Cerrar inventario?: ");
-            respuesta = Console.ReadLine();
+                Console.WriteLine("-------------------------");
 
-            if (respuesta.ToLower() == "sí" || respuesta.ToLower() == "si")
-            {
-                Console.WriteLine("Cerrando . . .");
+                // Preguntar al usuario si quiere ordenar el inventario por nivel
+                Console.Write("¿Desea ordenar el inventario por nivel? (Sí/No): ");
+                respuesta = Console.ReadLine();
+
+                if (respuesta.ToLower() == "sí" || respuesta.ToLower() == "si")
+                {
+                    // Ordenar el inventario por nivel
+                    inventario.Sort();
+
+                    // Mostrar el inventario ordenado
+                    foreach (COrdenator item in inventario)
+                    {
+                        Console.WriteLine(item);
+                    }
+                }
+
+
+
+                // Preguntar al usuario si desea comprar un artículo
+                Console.Write("¿Cerrar inventario?: ");
+                respuesta = Console.ReadLine();
+
+                if (respuesta.ToLower() == "sí" || respuesta.ToLower() == "si")
+                {
+                    Console.WriteLine("Cerrando . . .");
+                }
             }
         }
     }
