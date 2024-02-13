@@ -47,7 +47,7 @@ namespace GameInventory
             }
 
             // Preguntar al usuario si desea comprar un artículo
-            Console.Write("¿Cerrar inventario? (Sí/No): ");
+            Console.Write("¿Cerrar inventario?: ");
             respuesta = Console.ReadLine();
 
             if (respuesta.ToLower() == "sí" || respuesta.ToLower() == "si")
